@@ -34,9 +34,9 @@
                const request = new XMLHttpRequest();
                request.open('POST', webhookurl);
                request.setRequestHeader('Content-Type', 'application/json');
-                request.setHeader('Access-Control-Allow-Origin', '*');
-  request.setHeader('Access-Control-Allow-Methods', 'POST');
-  request.setHeader(
+                request.setRequestHeader('Access-Control-Allow-Origin', '*');
+  request.setRequestHeader('Access-Control-Allow-Methods', 'POST');
+  request.setRequestHeader(
     'Access-Control-Allow-Headers',
     'Authorization, Accept, Content-Type'
   );
