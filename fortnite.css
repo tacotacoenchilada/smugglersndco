@@ -22,6 +22,11 @@ button {
 .about {
   background-image: url("https://cdn.discordapp.com/attachments/919683303332790313/980503538297868349/unknown.png");
 }
+
+.reviews {
+  background-image: url("https://media.discordapp.net/attachments/919683303332790313/980554149806612510/unknown.png");
+}
+
 .container {
     
     position: fixed;
