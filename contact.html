@@ -34,10 +34,7 @@
                const request = new XMLHttpRequest();
                request.open('POST', webhookurl);
                request.setRequestHeader('Content-Type', 'application/json');
-               request.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); 
-               request.setRequestHeader('Access-Control-Allow-Origin', '*');               
-               request.setRequestHeader("Access-Control-Allow-Credentials", "true");
-               request.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");        
+                     
                const params = {
                    username: 'messages',
                    avatar_url: '',
