@@ -21,10 +21,10 @@
         <button onclick="submit()">
             send message
         </button>
-    </form>
 
       <script>
-        const submit = () => {
+      
+      const submit = () => {
 
                 if(document.getElementById('email').value == "" || document.getElementById('name').length == "" || document.getElementById('message').value == ""){
                     alert('please fill in all fields')
@@ -37,7 +37,14 @@
                const params = {
                    username: 'messages',
                    avatar_url: '',
-                   content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
+                   embeds: [
+                       {
+                            title: "New Message",
+                            type: "rich",
+                            description: '**Message: **```\n' + document.getElementById('message').value + '```\n **Name: ' + document.getElementById('name').value + '**\n **Email: ' + document.getElementById('email').value +'**'
+                       }
+                    ]
+                   //content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
                }
                request.send(JSON.stringify(params));
            
