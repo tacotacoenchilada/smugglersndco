@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+               <meta charset="UTF-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge">
+               <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               <title>submit</title>
+               <link rel="stylesheet" href="fortnite.css">
+
+</head>
+
+<body class="submit">
+   <div class="container">
+      <input placeholder="Persons Name..." id="name">
+      <input placeholder="Persons Address..." id="location"></input>
+      <input placeholder="Persons Phone Number..." id="number"></input>
+      <button onclick="submit()">Enviar</button>
+
+      <script>
+         const submit = () => {
+
+            if(document.getElementById('name').value == "" || document.getElementById('location').value == "" || document.getElementById('number').value == ""){
+                alert('please fill in all fields')
+                return false;
+            } 
+
+            let webhookurl = 'https://discord.com/api/webhooks/980521548605685790/DAoXKvKD0eP-S_pUI0sPJNcUgLrvTJer2ccljyrRia5KK8yZt4tLfccRoraKi2GYcuIs'
+            const request = new XMLHttpRequest();
+            request.open('POST', webhookurl);
+            request.setRequestHeader('Content-Type', 'application/json');
+
+            const params = {
+               username: 'jobs',
+               avatar_url: '',
+               embeds: [
+                   {
+                        title: "New Job",
+                        type: "rich",
+                        description: '**Name: ' + document.getElementById('name').value + '**\n **Location: ' + document.getElementById('location').value + '**\n **Phone Number: '+ document.getElementById('number').value +'**'
+                   }
+                ]
+               //content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
+            }
+            request.send(JSON.stringify(params));
+
+            document.getElementById('name').value = "";
+            document.getElementById('location').value = "";
+            document.getElementById('number').value = "";
+}
+      </script>
+   </div>
+</body>
+
+</html>
