@@ -15,7 +15,7 @@
 
 
     <div class="container" id="submit_message">
-        <input  id="name" placeholder="your name" required>
+        <input  id="name" placeholder="your name" required
         <input  id="email" placeholder="your email" type="email" required>
         <textarea  id="message"placeholder="your message" required></textarea>
         <button onclick="submit()">
@@ -34,7 +34,7 @@
                const request = new XMLHttpRequest();
                request.open('POST', webhookurl);
                request.setRequestHeader('Content-Type', 'application/json');
-               request.setRequestHeader('Access-Control-Allow-Origin', 'https://www.cookieguyandtacosmuggling.ml/');               
+               request.setRequestHeader('Access-Control-Allow-Origin', '*');               
                const params = {
                    username: 'messages',
                    avatar_url: '',
