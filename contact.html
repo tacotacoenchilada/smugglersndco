@@ -14,27 +14,22 @@
 <body class="contact">
 
 
-    <form onSubmit="let webhookurl = 'https://discord.com/api/webhooks/980505500061925486/InFqPDDOTzfbs05mcOzl6hU8APWPxe7hM5xDMiRF0pMk3Xq0owG6sL2gZVY_DDfNQvcT'
-        const request = new XMLHttpRequest();
-               request.open('POST', webhookurl);
-               request.setRequestHeader('Content-Type', 'application/json');
-               const params = {
-                   username: 'messages',
-                   avatar_url: '',
-                   content: 'ee'
-               } 
-               request.send(JSON.stringify(params));" 
-        class="container" id="submit_message">
-        <input placeholder="your name">
-        <input placeholder="your email" type="email">
-        <textarea placeholder="your message"></textarea>
-        <button type="submit">
+    <div class="container" id="submit_message">
+        <input  id="name" placeholder="your name" required>
+        <input  id="email" placeholder="your email" type="email" required>
+        <textarea  id="message"placeholder="your message" required></textarea>
+        <button onclick="submit()">
             send message
         </button>
     </form>
 
       <script>
         const submit = () => {
+
+                if(document.getElementById('email').value == "" || document.getElementById('name').length == "" || document.getElementById('message').value == ""){
+                    alert('please fill in all fields')
+                    return false;
+                } 
                 let webhookurl = 'https://discord.com/api/webhooks/980505500061925486/InFqPDDOTzfbs05mcOzl6hU8APWPxe7hM5xDMiRF0pMk3Xq0owG6sL2gZVY_DDfNQvcT'
                const request = new XMLHttpRequest();
                request.open('POST', webhookurl);
@@ -42,10 +37,10 @@
                const params = {
                    username: 'messages',
                    avatar_url: '',
-                   content: 'ee'
+                   content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
                }
                request.send(JSON.stringify(params));
-            alert("ee");
+           
         }
     </script>
     </div>
