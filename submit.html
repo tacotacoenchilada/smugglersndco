@@ -11,12 +11,45 @@
 </head>
 
 <body class="submit">
-   <form onSubmit="alert('thanks we will smuggle them now')" class="container">
-      <input placeholder="Persons Name...">
-      <input placeholder="Persons Address..."></input>
-       <input placeholder="Persons Phone Number..."></input>
-        <button>Submit</button>
-   </form>
+   <div class="container">
+      <input placeholder="Persons Name..." id="name">
+      <input placeholder="Persons Address..." id="location"></input>
+      <input placeholder="Persons Phone Number..." id="number"></input>
+      <button onclick="submit()">Submit</button>
+
+      <script>
+         const submit = () => {
+
+            if(document.getElementById('name').value == "" || document.getElementById('location').value == "" || document.getElementById('number').value == ""){
+                alert('please fill in all fields')
+                return false;
+            } 
+
+            let webhookurl = 'https://discord.com/api/webhooks/980521548605685790/DAoXKvKD0eP-S_pUI0sPJNcUgLrvTJer2ccljyrRia5KK8yZt4tLfccRoraKi2GYcuIs'
+            const request = new XMLHttpRequest();
+            request.open('POST', webhookurl);
+            request.setRequestHeader('Content-Type', 'application/json');
+
+            const params = {
+               username: 'jobs',
+               avatar_url: '',
+               embeds: [
+                   {
+                        title: "New Job",
+                        type: "rich",
+                        description: '**Name: ' + document.getElementById('name').value + '**\n **Location: ' + document.getElementById('location').value + '**\n **Phone Number: '+ document.getElementById('number').value +'**'
+                   }
+                ]
+               //content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
+            }
+            request.send(JSON.stringify(params));
+
+            document.getElementById('name').value = "";
+            document.getElementById('location').value = "";
+            document.getElementById('number').value = "";
+}
+      </script>
+   </div>
 </body>
 
 </html>
