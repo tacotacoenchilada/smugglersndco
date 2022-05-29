@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fortnite.css">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <title>contact us - smugglers n co</title>
+    <title>contacto - smugglers n co</title>
 
 </head>
 
@@ -15,11 +15,11 @@
 
 
     <div class="container" id="submit_message">
-        <input  id="name" placeholder="your name" required>
-        <input  id="email" placeholder="your email" type="email" required>
-        <textarea  id="message"placeholder="your message" required></textarea>
+        <input  id="name" placeholder="tu nombre" required>
+        <input  id="email" placeholder="tu correo electrónico" type="email" required>
+        <textarea  id="message"placeholder="tu mensaje" required></textarea>
         <button onclick="submit()">
-            send message
+            enviar mensaje
         </button>
 
       <script>
@@ -27,7 +27,7 @@
       const submit = () => {
 
                 if(document.getElementById('email').value == "" || document.getElementById('name').value == "" || document.getElementById('message').value == ""){
-                    alert('please fill in all fields')
+                    alert('por favor rellena todos los campos')
                     return false;
                 } 
                 let webhookurl = 'https://discord.com/api/webhooks/980505500061925486/InFqPDDOTzfbs05mcOzl6hU8APWPxe7hM5xDMiRF0pMk3Xq0owG6sL2gZVY_DDfNQvcT'

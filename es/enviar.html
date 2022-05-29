@@ -12,16 +12,16 @@
 
 <body class="submit">
    <div class="container">
-      <input placeholder="Persons Name..." id="name">
-      <input placeholder="Persons Address..." id="location"></input>
-      <input placeholder="Persons Phone Number..." id="number"></input>
+      <input placeholder="Nombre de persona..." id="name">
+      <input placeholder="Dirección de la persona..." id="location"></input>
+      <input placeholder="Número de teléfono de persona..." id="number"></input>
       <button onclick="submit()">Enviar</button>
 
       <script>
          const submit = () => {
 
             if(document.getElementById('name').value == "" || document.getElementById('location').value == "" || document.getElementById('number').value == ""){
-                alert('please fill in all fields')
+                alert('por favor rellena todos los campos')
                 return false;
             } 
 
