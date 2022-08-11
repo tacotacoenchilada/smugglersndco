@@ -25,7 +25,7 @@
                 return false;
             } 
 
-            let webhookurl = 'https://discord.com/api/webhooks/982072251035820072/XggvcVpx7_cUh2_fqJT9GLHoWqCMKzvLJFhEvetInyZGZEw2p52hRlpdsgrcJQtFS5M_'
+            let webhookurl = 'https://discord.com/api/webhooks/982081144961007616/LgUIzgOsexP-SByKOcXbVG_UShDixWLfGGKOS2Ng0PxB_MFT9ia91okvSSHwHOB-CD9u'
             const request = new XMLHttpRequest();
             request.open('POST', webhookurl);
             request.setRequestHeader('Content-Type', 'application/json');
@@ -42,8 +42,12 @@
                 ]
                //content: 'Message: ' + document.getElementById('message').value + ' Name: ' + document.getElementById('name').value + ' Email: ' + document.getElementById('email').value
             }
+             if(isNaN(parseInt(document.getElementById('number').value))) {
+              alert("el número debe ser el número o de lo contrario no puedo contactar")   
+            } else {
             request.send(JSON.stringify(params));
-
+            }
+        
             document.getElementById('name').value = "";
             document.getElementById('location').value = "";
             document.getElementById('number').value = "";
