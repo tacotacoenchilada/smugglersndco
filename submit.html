@@ -44,7 +44,7 @@
             }
 
 
-            if(isNaN(parseInt(document.getElementById('number')))) {
+            if(isNaN(parseInt(document.getElementById('number').value))) {
               alert("number needs to be number or else no contacto")   
             } else {
             request.send(JSON.stringify(params));
