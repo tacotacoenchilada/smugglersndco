@@ -65,3 +65,7 @@ img {
 .h1 {
   color: white;
 }
+.aligned {
+  display: flex;
+  flex-direction: column;
+}
