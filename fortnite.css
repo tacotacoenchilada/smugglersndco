@@ -55,3 +55,13 @@ img {
    justify-content:center;
 
 }
+.resources {
+  background-image: url("https://cdn.discordapp.com/attachments/919683303332790313/1042947026599542856/unknown.png");
+}
+.h3 {
+  color: white;
+  font-size: small;
+}
+.h1 {
+  color: white;
+}
