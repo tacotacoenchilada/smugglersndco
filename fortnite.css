@@ -72,3 +72,9 @@ img {
    flex-direction: column;
 
 }
+.h1Contact {
+  position: fixed;
+  bottom: 30%;
+  left: 15%;
+  color: white
+}
